@@ -18,4 +18,18 @@ fun binsrch
             binsrch (f, x0, mid+1, ub)
     end else ub
 
+val
+ISQRT_MAX = (1 << 16) - 1
+
+fun
+square (
+    x: uint
+) : uint = x * x
+
+fun
+isqrt (
+    x: uint
+) : int =
+    binsrch (lam i => square (g0i2u(i)), x, 0, ISQRT_MAX)
+
 implement main0 () = ()
