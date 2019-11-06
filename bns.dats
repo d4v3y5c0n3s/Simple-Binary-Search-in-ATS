@@ -8,7 +8,7 @@
 fun binsrch
 (
     f: int -<cloref1> uint, x0: uint, lb: int, ub: int
-)
+) : int =
     if lb <= ub then let
         val mid = lb + (ub - lb) / 2
     in
