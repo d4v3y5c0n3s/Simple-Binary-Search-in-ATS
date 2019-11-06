@@ -7,12 +7,15 @@
 *)
 fun binsrch
 (
-    f: int -> uint, x0: uint, lb: int, ub: int
+    f: int -<cloref1> uint, x0: uint, lb: int, ub: int
 )
-    if then let
-        //
+    if lb <= ub then let
+        val mid = lb + (ub - lb) / 2
     in
-        //
+        if x0 > f (mid) then
+            binsrch (f, x0, lb, mid-1)
+        else
+            binsrch (f, x0, mid+1, ub)
     end else ub
 
 implement main0 () = ()
